@@ -1,17 +1,38 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-
-const root = ReactDOM.createRoot(document.getElementById('root'));
+import ReactDOM from 'react-dom/client'
+import Test from './components/TestComponent'
+import HelloWorldComponent from './components/TestComponent'
+import FragmentComponent from './components/FragmentComponent'
+import Multi,{ BomDia } from './components/MultiplosComponent'
+import Saudacao from './components/SaudacaoClasseComponent'
+import Saudacao2 from './components/SaudacaoClasseConstrutorComponent'
+import Pai from './components/Pai'
+import Produto from './components/Produto'
+import Marca from './components/Marca'
+//ReactDOM.render(<HelloWorldComponent nome="joao"/>,document.getElementById("root"))
+const domNode = document.getElementById("root")
+const root = ReactDOM.createRoot(domNode)
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+  <div>
+    <Test></Test>
+    <hr></hr>
+    <HelloWorldComponent nome="joao"/>
+    <hr></hr>
+    <FragmentComponent/>
+    <hr></hr>
+    <BomDia nome="joao"/>
+    <hr></hr>
+    <Multi.BoaNoite nome="paulo"></Multi.BoaNoite>
+    <hr></hr>
+    <Saudacao tipo="Como vai" nome="João"></Saudacao>
+    <hr></hr>
+    <Saudacao2 tipo="Fala" nome="Paulo"></Saudacao2>
+    <hr></hr>
+    <Pai nome="Severino" sobrenome="Araújo"></Pai>
+    <hr></hr>
+    <Marca nomeMarca="Fiat">
+      <Produto nomeProduto="Uno"></Produto>
+      <Produto nomeProduto="Palio"></Produto>
+      <Produto nomeProduto="Strada"></Produto>
+    </Marca>
+  </div>
+)
